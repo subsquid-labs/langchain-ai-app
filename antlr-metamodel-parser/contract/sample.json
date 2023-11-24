@@ -1,0 +1,235 @@
+{
+  "instances": {
+    "$": {
+      "xmlns": "http://generator.revo.genesys.it/components/instances",
+      "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+      "instancesVersion": "solidity_0.0.1",
+      "xsi:schemaLocation": "http://generator.revo.genesys.it/components/instances http://smartshaped.revo.server:8080/REVO_Generator_Schemas/components-instances.xsd ",
+      "category": "akb_solidity_smartcontract"
+    },
+    "instancelp6tnsz6": {
+      "id": "instancelp6tnsz6",
+      "toGenerate": "true",
+      "componentId": ["DataEntitySimple"],
+      "attributes": {
+        "state": [""],
+        "subtype": ["address"],
+        "name": ["param1"],
+        "type": ["simple"],
+        "visibility": [""],
+        "varLocation": [""],
+        "scope": [""],
+        "contractRef": ["contractlp6tng4y"],
+        "functionRef": ["functionlp6tnkjl"],
+        "eventRef": [""],
+        "dataEntityRef": [""],
+        "elementRef": [""],
+        "modifierRef": [""],
+        "mappingRef": [""],
+        "operationRef": [""],
+        "componentId": ["DataEntitySimple"]
+      }
+    },
+    "instancelp6to0e3": {
+      "id": "instancelp6to0e3",
+      "toGenerate": "true",
+      "componentId": ["DataEntitySimple"],
+      "attributes": {
+        "state": [""],
+        "subtype": ["address"],
+        "name": ["retparam1"],
+        "type": ["simple"],
+        "visibility": [""],
+        "varLocation": [""],
+        "scope": [""],
+        "contractRef": ["contractlp6tng4y"],
+        "functionRef": [""],
+        "eventRef": [""],
+        "dataEntityRef": [""],
+        "elementRef": [""],
+        "modifierRef": [""],
+        "mappingRef": [""],
+        "operationRef": [""],
+        "componentId": ["DataEntitySimple"]
+      }
+    },
+    "contractlp6tng4y": {
+      "id": "contractlp6tng4y",
+      "toGenerate": "true",
+      "componentId": ["Contract"],
+      "attributes": {
+        "isAbstract": ["false"],
+        "customConstructor": [""],
+        "modifierCustom": [""],
+        "imports": [""],
+        "events": [""],
+        "functions": ["functionlp6tnkjl", "functionlp6tod1t"],
+        "dataEntities": ["datalp6to1qx", "datalp6to1q111x"],
+        "projectRef": [""],
+        "name": ["FSdfsdf"],
+        "nsMetaData": [""],
+        "baseConstructor": [""],
+        "importRef": [""],
+        "nsTitle": [""],
+        "nsAuthor": [""],
+        "nsNotice": [""],
+        "componentId": ["Contract"]
+      }
+    },
+    "functionlp6tnkjl": {
+      "id": "functionlp6tnkjl",
+      "toGenerate": "true",
+      "componentId": ["FunctionCustom"],
+      "attributes": {
+        "contractRef": ["contractlp6tng4y"],
+        "isCrossContract": ["false"],
+        "isPayable": ["false"],
+        "name": ["fc1"],
+        "visibility": ["external"],
+        "inputParams": ["instancelp6tnsz6"],
+        "returnParam": ["instancelp6to0e3"],
+        "modifiers": [""],
+        "elementRef": ["elementlp6touq9"],
+        "functionElements": ["elementlp6tokiy"],
+        "componentId": ["FunctionCustom"]
+      }
+    },
+    "functionlp6tod1t": {
+      "id": "functionlp6tod1t",
+      "toGenerate": "true",
+      "componentId": ["FunctionCustom"],
+      "attributes": {
+        "contractRef": ["contractlp6tng4y"],
+        "isCrossContract": ["false"],
+        "name": ["fc2"],
+        "visibility": ["external"],
+        "modifiers": [""],
+        "functionElements": ["elementlp6touq9"],
+        "componentId": ["FunctionCustom"]
+      }
+    },
+    "datalp6to1qx": {
+      "id": "datalp6to1qx",
+      "toGenerate": "true",
+      "componentId": ["DataEntitySimple"],
+      "attributes": {
+        "state": [""],
+        "subtype": ["address"],
+        "name": ["glob1"],
+        "type": ["simple"],
+        "visibility": [""],
+        "varLocation": [""],
+        "scope": [""],
+        "contractRef": ["contractlp6tng4y"],
+        "functionRef": [""],
+        "eventRef": [""],
+        "dataEntityRef": [""],
+        "elementRef": ["elementlp6tokiy"],
+        "modifierRef": [""],
+        "mappingRef": ["mappinglp6toxgi", "mappinglp6toycx"],
+        "operationRef": [""],
+        "componentId": ["DataEntitySimple"]
+      }
+    },
+    "datalp6to1q111x": {
+      "id": "datalp6to1q111x",
+      "toGenerate": "true",
+      "componentId": ["DataEntitySimple"],
+      "attributes": {
+        "state": [""],
+        "subtype": ["address"],
+        "name": ["glob13"],
+        "type": ["simple"],
+        "visibility": [""],
+        "varLocation": [""],
+        "scope": [""],
+        "contractRef": ["contractlp6tng4y"],
+        "functionRef": [""],
+        "eventRef": [""],
+        "dataEntityRef": [""],
+        "elementRef": ["elementlp6tokiy"],
+        "modifierRef": [""],
+        "mappingRef": ["mappinglp6toxgi", "mappinglp6toycx"],
+        "operationRef": [""],
+        "componentId": ["DataEntitySimple"]
+      }
+    },
+    "elementlp6tokiy": {
+      "id": "elementlp6tokiy",
+      "toGenerate": "true",
+      "componentId": ["ElementDataEntityInstantiation"],
+      "attributes": {
+        "primaryScope": ["datalp6to1qx"],
+        "operation": [""],
+        "name": ["Data Entity In1"],
+        "flowStep": ["1"],
+        "destinations": [""],
+        "functionRef": ["functionlp6tnkjl"],
+        "elementRef": [""],
+        "componentId": ["ElementDataEntityInstantiation"]
+      }
+    },
+    "elementlp6touq9": {
+      "id": "elementlp6touq9",
+      "toGenerate": "true",
+      "componentId": ["ElementFunctionCall"],
+      "attributes": {
+        "function": ["functionlp6tnkjl"],
+        "inputMapping": ["mappinglp6toxgi"],
+        "returnMapping": ["mappinglp6toycx"],
+        "address": [""],
+        "name": ["Function Call 1"],
+        "flowStep": ["1"],
+        "destinations": [""],
+        "functionRef": ["functionlp6tod1t"],
+        "elementRef": [""],
+        "componentId": ["ElementFunctionCall"]
+      }
+    },
+    "mappinglp6toxgi": {
+      "id": "mappinglp6toxgi",
+      "toGenerate": "true",
+      "componentId": ["Mapping"],
+      "attributes": {
+        "elementRef": ["elementlp6touq9"],
+        "operationRef": [""],
+        "mapFrom": ["datalp6to1q111x"],
+        "mapTo": ["instancelp6tnsz6"],
+        "componentId": ["Mapping"]
+      }
+    },
+    "mappinglp6toycx": {
+      "id": "mappinglp6toycx",
+      "toGenerate": "true",
+      "componentId": ["Mapping"],
+      "attributes": {
+        "elementRef": ["elementlp6touq9"],
+        "operationRef": [""],
+        "mapFrom": ["datalp6to1q111x"],
+        "mapTo": ["instancelp6to0e3"],
+        "componentId": ["Mapping"]
+      }
+    },
+    "projectyy9eba39f2879711eeab64020e830dc5ef": {
+      "id": "projectyy9eba39f2879711eeab64020e830dc5ef",
+      "toGenerate": "true",
+      "componentId": ["Project"],
+      "attributes": {
+        "primaryScope": ["datalowtzy03"],
+        "operation": [""],
+        "name": ["sdfsd"],
+        "componentId": ["Project"]
+      }
+    },
+    "projectyyd28bd7b9821811eeab64020e830dc5ef": {
+      "id": "projectyyd28bd7b9821811eeab64020e830dc5ef",
+      "toGenerate": "true",
+      "componentId": ["Project"],
+      "attributes": {
+        "name": ["Code Preview Demo"],
+        "contracts": ["contractlp6tng4y"],
+        "componentId": ["Project"]
+      }
+    }
+  }
+}

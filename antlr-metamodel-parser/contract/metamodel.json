@@ -1,0 +1,610 @@
+[
+  {
+    "id": "Contract",
+    "parentComponent": ["ContractBase"],
+    "attributes": {
+      "isAbstract": { "value-type": [""], "mandatory": ["false"] },
+      "customConstructor": {
+        "component-ref": ["FunctionCustom"],
+        "mandatory": ["false"]
+      },
+      "imports": {
+        "collection-component-ref": ["Import"],
+        "mandatory": ["false"]
+      },
+      "events": {
+        "collection-component-ref": ["Event"],
+        "mandatory": ["false"]
+      },
+      "functions": {
+        "collection-component-ref": ["FunctionBase"],
+        "mandatory": ["false"]
+      },
+      "dataEntities": {
+        "collection-component-ref": ["DataEntityBase"],
+        "mandatory": ["false"]
+      },
+      "modifierCustom": {
+        "collection-component-ref": ["Modifier"],
+        "mandatory": ["false"]
+      },
+      "projectRef": { "component-ref": ["Project"], "mandatory": ["false"] }
+    }
+  },
+  {
+    "id": "ContractBase",
+    "parentComponent": ["ContractNatSpec"],
+    "attributes": {
+      "name": { "value-type": [""], "mandatory": ["true"] },
+      "baseConstructor": {
+        "component-ref": ["FunctionBase"],
+        "mandatory": ["false"]
+      },
+      "nsMetaData": {
+        "component-ref": ["NatSpecGenMetadata"],
+        "mandatory": ["false"]
+      },
+      "importRef": { "component-ref": ["Import"], "mandatory": ["false"] },
+      "functionOverride": {
+        "component-ref": ["FunctionOverride"],
+        "mandatory": ["false"]
+      },
+      "modifierOverride": {
+        "component-ref": ["ModifierOverride"],
+        "mandatory": ["false"]
+      }
+    }
+  },
+  {
+    "id": "ContractNatSpec",
+    "parentComponent": "",
+    "attributes": {
+      "nsTitle": { "value-type": [""], "mandatory": ["false"] },
+      "nsAuthor": { "value-type": [""], "mandatory": ["false"] },
+      "nsNotice": { "value-type": [""], "mandatory": ["false"] }
+    }
+  },
+  {
+    "id": "DataEntityArray",
+    "parentComponent": ["DataEntityBase"],
+    "attributes": { "subtype": { "value-type": [""], "mandatory": ["true"] } }
+  },
+  {
+    "id": "DataEntityArrayStruct",
+    "parentComponent": ["DataEntityBase"],
+    "attributes": {
+      "definitionRef": {
+        "component-ref": ["DataEntityStruct"],
+        "mandatory": ["true"]
+      }
+    }
+  },
+  {
+    "id": "DataEntityBase",
+    "parentComponent": "",
+    "attributes": {
+      "name": { "value-type": [""], "mandatory": ["true"] },
+      "type": { "value-type": [""], "mandatory": ["true"] },
+      "visibility": { "value-type": [""], "mandatory": ["false"] },
+      "varLocation": { "value-type": [""], "mandatory": ["false"] },
+      "scope": { "value-type": [""], "mandatory": ["false"] },
+      "contractRef": {
+        "component-ref": ["ContractBase"],
+        "mandatory": ["false"]
+      },
+      "functionRef": {
+        "component-ref": ["FunctionBase"],
+        "mandatory": ["false"]
+      },
+      "eventRef": { "component-ref": ["Event"], "mandatory": ["false"] },
+      "dataEntityRef": {
+        "collection-component-ref": ["DataEntityBase"],
+        "mandatory": ["false"]
+      },
+      "elementRef": {
+        "collection-component-ref": ["ElementBase"],
+        "mandatory": ["false"]
+      },
+      "modifierRef": { "component-ref": ["Modifier"], "mandatory": ["false"] },
+      "mappingRef": {
+        "collection-component-ref": ["Mapping"],
+        "mandatory": ["false"]
+      },
+      "operationRef": {
+        "collection-component-ref": ["OperationAbstract"],
+        "mandatory": ["false"]
+      }
+    }
+  },
+  {
+    "id": "DataEntityEnum",
+    "parentComponent": ["DataEntityBase"],
+    "attributes": {
+      "values": {
+        "collection-component-ref": ["DataEntityFreeInput"],
+        "mandatory": ["true"]
+      }
+    }
+  },
+  {
+    "id": "DataEntityFreeInput",
+    "parentComponent": ["DataEntityBase"],
+    "attributes": {
+      "subtype": { "value-type": [""], "mandatory": ["true"] },
+      "value": { "value-type": [""], "mandatory": ["true"] }
+    }
+  },
+  {
+    "id": "DataEntityMapping",
+    "parentComponent": ["DataEntityBase"],
+    "attributes": {
+      "mappingKey": { "value-type": [""], "mandatory": ["false"] },
+      "mappingValue": { "value-type": [""], "mandatory": ["false"] },
+      "definitionRef": {
+        "component-ref": ["DataEntityMapping"],
+        "mandatory": ["false"]
+      }
+    }
+  },
+  {
+    "id": "DataEntityMappingStruct",
+    "parentComponent": ["DataEntityBase"],
+    "attributes": {
+      "mappingKey": { "value-type": [""], "mandatory": ["false"] },
+      "mappingValue": {
+        "component-ref": ["DataEntityStruct"],
+        "mandatory": ["false"]
+      },
+      "definitionRef": {
+        "component-ref": ["DataEntityMappingStruct"],
+        "mandatory": ["false"]
+      }
+    }
+  },
+  {
+    "id": "DataEntityPointer",
+    "parentComponent": ["DataEntityBase"],
+    "attributes": {
+      "keyPointer": {
+        "component-ref": ["DataEntityBase"],
+        "mandatory": ["false"]
+      },
+      "indexPointer": { "value-type": [""], "mandatory": ["false"] },
+      "specialPointer": { "value-type": [""], "mandatory": ["false"] }
+    }
+  },
+  {
+    "id": "DataEntityPointerArray",
+    "parentComponent": ["DataEntityBase"],
+    "attributes": {
+      "keyPointer": {
+        "component-ref": ["DataEntityBase"],
+        "mandatory": ["false"]
+      }
+    }
+  },
+  {
+    "id": "DataEntitySimple",
+    "parentComponent": ["DataEntityBase"],
+    "attributes": {
+      "state": { "value-type": [""], "mandatory": ["false"] },
+      "subtype": { "value-type": [""], "mandatory": ["true"] }
+    }
+  },
+  {
+    "id": "DataEntityStruct",
+    "parentComponent": ["DataEntityBase"],
+    "attributes": {
+      "definitionRef": {
+        "component-ref": ["DataEntityStruct"],
+        "mandatory": ["false"]
+      },
+      "properties": {
+        "component-ref": ["DataEntityBase"],
+        "mandatory": ["false"]
+      }
+    }
+  },
+  {
+    "id": "ElementBase",
+    "parentComponent": "",
+    "attributes": {
+      "name": { "value-type": [""], "mandatory": ["true"] },
+      "flowStep": { "value-type": [""], "mandatory": ["false"] },
+      "destinations": {
+        "collection-component-ref": ["ElementBase"],
+        "mandatory": ["false"]
+      },
+      "functionRef": {
+        "component-ref": ["FunctionCustom"],
+        "mandatory": ["false"]
+      },
+      "elementRef": { "component-ref": ["ElementBase"], "mandatory": ["false"] }
+    }
+  },
+  {
+    "id": "ElementCondition",
+    "parentComponent": ["ElementBase"],
+    "attributes": {
+      "type": { "value-type": [""], "mandatory": ["true"] },
+      "operation": {
+        "component-ref": ["OperationCondition"],
+        "mandatory": ["true"]
+      },
+      "elseDestination": {
+        "component-ref": ["ElementBase"],
+        "mandatory": ["false"]
+      },
+      "loopRef": { "component-ref": ["ElementLoop"], "mandatory": ["false"] },
+      "modifierRef": { "component-ref": ["Modifier"], "mandatory": ["false"] }
+    }
+  },
+  {
+    "id": "ElementContractInstantiation",
+    "parentComponent": ["ElementBase"],
+    "attributes": {
+      "contract": { "component-ref": ["ContractBase"], "mandatory": ["true"] },
+      "mapping": {
+        "collection-component-ref": ["Mapping"],
+        "mandatory": ["false"]
+      },
+      "returnMapping": { "component-ref": ["Mapping"], "mandatory": ["false"] }
+    }
+  },
+  {
+    "id": "ElementDataEntityInstantiation",
+    "parentComponent": ["ElementBase"],
+    "attributes": {
+      "primaryScope": {
+        "component-ref": ["DataEntityBase"],
+        "mandatory": ["true"]
+      },
+      "operation": {
+        "component-ref": ["OperationAbstract"],
+        "mandatory": ["false"]
+      }
+    }
+  },
+  {
+    "id": "ElementDataManipulation",
+    "parentComponent": ["ElementBase"],
+    "attributes": {
+      "primaryScope": {
+        "component-ref": ["DataEntityBase"],
+        "mandatory": ["true"]
+      },
+      "operation": {
+        "component-ref": ["OperationAbstract"],
+        "mandatory": ["true"]
+      }
+    }
+  },
+  {
+    "id": "ElementEventEmission",
+    "parentComponent": ["ElementBase"],
+    "attributes": {
+      "event": { "component-ref": ["Event"], "mandatory": ["true"] },
+      "inputMapping": {
+        "collection-component-ref": ["Mapping"],
+        "mandatory": ["true"]
+      }
+    }
+  },
+  {
+    "id": "ElementFunctionCall",
+    "parentComponent": ["ElementBase"],
+    "attributes": {
+      "function": { "component-ref": ["FunctionBase"], "mandatory": ["true"] },
+      "inputMapping": {
+        "collection-component-ref": ["Mapping"],
+        "mandatory": ["true"]
+      },
+      "returnMapping": { "component-ref": ["Mapping"], "mandatory": ["false"] },
+      "address": { "value-type": [""], "mandatory": ["false"] }
+    }
+  },
+  {
+    "id": "ElementLoop",
+    "parentComponent": ["ElementBase"],
+    "attributes": {
+      "condition": {
+        "component-ref": ["ElementCondition"],
+        "mandatory": ["true"]
+      },
+      "functionCall": {
+        "component-ref": ["ElementFunctionCall"],
+        "mandatory": ["true"]
+      }
+    }
+  },
+  {
+    "id": "ElementReturn",
+    "parentComponent": ["ElementBase"],
+    "attributes": {
+      "mapping": { "component-ref": ["Mapping"], "mandatory": ["true"] }
+    }
+  },
+  {
+    "id": "Event",
+    "parentComponent": ["EventNatSpec"],
+    "attributes": {
+      "contractRef": {
+        "component-ref": ["ContractBase"],
+        "mandatory": ["true"]
+      },
+      "name": { "value-type": [""], "mandatory": ["true"] },
+      "inputParams": {
+        "collection-component-ref": ["DataEntityBase"],
+        "mandatory": ["true"]
+      }
+    }
+  },
+  {
+    "id": "EventNatSpec",
+    "parentComponent": "",
+    "attributes": {
+      "nsDev": { "value-type": [""], "mandatory": ["false"] },
+      "nsParam": { "value-type": [""], "mandatory": ["false"] }
+    }
+  },
+  {
+    "id": "FunctionBase",
+    "parentComponent": ["FunctionNatSpec"],
+    "attributes": {
+      "name": { "value-type": [""], "mandatory": ["true"] },
+      "visibility": { "value-type": [""], "mandatory": ["false"] },
+      "stateBehavior": { "value-type": [""], "mandatory": ["false"] },
+      "isPayable": { "value-type": [""], "mandatory": ["false"] },
+      "inputParams": {
+        "collection-component-ref": ["DataEntityBase"],
+        "mandatory": ["false"]
+      },
+      "returnParam": {
+        "component-ref": ["DataEntityBase"],
+        "mandatory": ["false"]
+      },
+      "importRef": { "component-ref": ["Import"], "mandatory": ["false"] },
+      "contractRef": {
+        "collection-component-ref": ["ContractBase"],
+        "mandatory": ["true"]
+      },
+      "elementRef": { "component-ref": ["ElementBase"], "mandatory": ["false"] }
+    }
+  },
+  {
+    "id": "FunctionCustom",
+    "parentComponent": ["FunctionBase"],
+    "attributes": {
+      "isCrossContract": { "value-type": [""], "mandatory": ["false"] },
+      "modifiers": {
+        "collection-component-ref": ["ModifierCall"],
+        "mandatory": ["false"]
+      },
+      "functionElements": {
+        "collection-component-ref": ["ElementBase"],
+        "mandatory": ["false"]
+      }
+    }
+  },
+  {
+    "id": "FunctionNatSpec",
+    "parentComponent": "",
+    "attributes": {
+      "nsNotice": { "value-type": [""], "mandatory": ["false"] },
+      "nsReturn": { "value-type": [""], "mandatory": ["false"] },
+      "nsInheritdoc": { "value-type": [""], "mandatory": ["false"] },
+      "nsDev": { "value-type": [""], "mandatory": ["false"] },
+      "nsParam": { "value-type": [""], "mandatory": ["false"] }
+    }
+  },
+  {
+    "id": "FunctionOverride",
+    "parentComponent": "",
+    "attributes": {
+      "name": { "value-type": [""], "mandatory": ["true"] },
+      "functionBase": {
+        "collection-component-ref": ["FunctionBase"],
+        "mandatory": ["true"]
+      },
+      "functionElements": {
+        "collection-component-ref": ["ElementBase"],
+        "mandatory": ["true"]
+      }
+    }
+  },
+  {
+    "id": "Import",
+    "parentComponent": "",
+    "attributes": {
+      "name": { "value-type": [""], "mandatory": ["true"] },
+      "link": { "value-type": [""], "mandatory": ["true"] },
+      "type": { "value-type": [""], "mandatory": ["true"] },
+      "contractRef": {
+        "component-ref": ["ContractBase"],
+        "mandatory": ["true"]
+      }
+    }
+  },
+  {
+    "id": "ImportContract",
+    "parentComponent": ["Import"],
+    "attributes": {
+      "contract": { "component-ref": ["ContractBase"], "mandatory": ["true"] },
+      "resourceName": { "value-type": [""], "mandatory": ["true"] }
+    }
+  },
+  {
+    "id": "ImportInheritance",
+    "parentComponent": ["Import"],
+    "attributes": {
+      "contract": { "component-ref": ["ContractBase"], "mandatory": ["true"] },
+      "resourceName": { "value-type": [""], "mandatory": ["true"] }
+    }
+  },
+  {
+    "id": "ImportLibrary",
+    "parentComponent": ["Import"],
+    "attributes": {
+      "contract": { "component-ref": ["ContractBase"], "mandatory": ["true"] },
+      "resourceName": { "value-type": [""], "mandatory": ["true"] }
+    }
+  },
+  {
+    "id": "Mapping",
+    "parentComponent": "",
+    "attributes": {
+      "mapFrom": { "component-ref": ["DataEntityBase"], "mandatory": ["true"] },
+      "mapTo": { "component-ref": ["DataEntityBase"], "mandatory": ["true"] },
+      "elementRef": {
+        "component-ref": ["ElementBase"],
+        "mandatory": ["false"]
+      },
+      "operationRef": {
+        "component-ref": ["OperationAbstract"],
+        "mandatory": ["false"]
+      }
+    }
+  },
+  {
+    "id": "Modifier",
+    "parentComponent": "",
+    "attributes": {
+      "name": { "value-type": [""], "mandatory": ["true"] },
+      "inputParams": {
+        "collection-component-ref": ["DataEntityBase"],
+        "mandatory": ["false"]
+      },
+      "condition": {
+        "collection-component-ref": ["ElementCondition"],
+        "mandatory": ["false"]
+      },
+      "contractRef": {
+        "component-ref": ["ContractBase"],
+        "mandatory": ["true"]
+      }
+    }
+  },
+  {
+    "id": "ModifierCall",
+    "parentComponent": "",
+    "attributes": {
+      "modifierRef": { "component-ref": ["Modifier"], "mandatory": ["true"] },
+      "mapping": {
+        "collection-component-ref": ["Mapping"],
+        "mandatory": ["false"]
+      },
+      "functionRef": {
+        "component-ref": ["FunctionCustom"],
+        "mandatory": ["true"]
+      }
+    }
+  },
+  {
+    "id": "ModifierOverride",
+    "parentComponent": "",
+    "attributes": {
+      "name": { "value-type": [""], "mandatory": ["true"] },
+      "modifier": { "component-ref": ["Modifier"], "mandatory": ["true"] },
+      "condition": {
+        "collection-component-ref": ["ElementCondition"],
+        "mandatory": ["true"]
+      }
+    }
+  },
+  {
+    "id": "NatSpecGenMetadata",
+    "parentComponent": "",
+    "attributes": {
+      "name": { "value-type": [""], "mandatory": ["true"] },
+      "keyValueCouples": {
+        "collection-component-ref": ["NatSpecGenMetadataKeyValue"],
+        "mandatory": ["true"]
+      },
+      "contractRef": {
+        "component-ref": ["ContractBase"],
+        "mandatory": ["false"]
+      },
+      "projectRef": { "component-ref": ["Project"], "mandatory": ["false"] }
+    }
+  },
+  {
+    "id": "NatSpecGenMetadataKeyValue",
+    "parentComponent": "",
+    "attributes": {
+      "metadataKey": { "value-type": [""], "mandatory": ["true"] },
+      "metadataValue": { "value-type": [""], "mandatory": ["true"] },
+      "containerRef": {
+        "component-ref": ["NatSpecGenMetadata"],
+        "mandatory": ["false"]
+      }
+    }
+  },
+  {
+    "id": "OperationAbstract",
+    "parentComponent": "",
+    "attributes": {
+      "operationType": { "value-type": [""], "mandatory": ["true"] },
+      "elementRef": {
+        "collection-component-ref": ["ElementBase"],
+        "mandatory": ["true"]
+      }
+    }
+  },
+  {
+    "id": "OperationArray",
+    "parentComponent": ["OperationAbstract"],
+    "attributes": {
+      "term01": { "component-ref": ["DataEntityBase"], "mandatory": ["true"] },
+      "operator": { "value-type": [""], "mandatory": ["true"] }
+    }
+  },
+  {
+    "id": "OperationAssign",
+    "parentComponent": ["OperationAbstract"],
+    "attributes": {
+      "mapping": { "component-ref": ["Mapping"], "mandatory": ["true"] }
+    }
+  },
+  {
+    "id": "OperationCondition",
+    "parentComponent": ["OperationAbstract"],
+    "attributes": {
+      "term01": { "component-ref": ["DataEntityBase"], "mandatory": ["true"] },
+      "term02": { "component-ref": ["DataEntityBase"], "mandatory": ["true"] },
+      "operator": { "value-type": [""], "mandatory": ["true"] }
+    }
+  },
+  {
+    "id": "OperationMath",
+    "parentComponent": ["OperationAbstract"],
+    "attributes": {
+      "term01": { "component-ref": ["DataEntityBase"], "mandatory": ["true"] },
+      "term02": { "component-ref": ["DataEntityBase"], "mandatory": ["true"] },
+      "operator": { "value-type": [""], "mandatory": ["true"] }
+    }
+  },
+  {
+    "id": "OperationString",
+    "parentComponent": ["OperationAbstract"],
+    "attributes": {
+      "term01": { "component-ref": ["DataEntityBase"], "mandatory": ["true"] },
+      "term02": { "component-ref": ["DataEntityBase"], "mandatory": ["true"] },
+      "operator": { "value-type": [""], "mandatory": ["true"] }
+    }
+  },
+  {
+    "id": "Project",
+    "parentComponent": [""],
+    "attributes": {
+      "name": { "value-type": [""], "mandatory": ["true"] },
+      "contracts": {
+        "collection-component-ref": ["Contract"],
+        "mandatory": ["false"]
+      },
+      "nsMetaData": {
+        "component-ref": ["NatSpecGenMetadata"],
+        "mandatory": ["false"]
+      }
+    }
+  }
+]
