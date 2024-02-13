@@ -12,5 +12,5 @@ python-dotenv==1.0.0
 flask_cors==4.0.0
 llama_index==0.8.50
 openai==0.28.1
-llama_hub==0.0.39
+llama_hub==0.0.79.post1
 asyncio== 3.4.3
