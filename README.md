@@ -12,7 +12,7 @@ A user types a prompt (for example, a question about Uniswap swaps). The fronten
 - run a GraphQL query against that squid,
 - sort the returned results by timestamp or block number.
 
-The agent uses these tools to build and execute a query, then returns a text answer. The squid it queries is a Uniswap swaps squid served at `https://squid.subsquid.io/swaps-squid/v/v1/graphql`.
+The agent uses these tools to build and execute a query, then returns a text answer. The squid it queries is a Uniswap swaps squid served at a hosted GraphQL endpoint.
 
 ## Repository layout
 
